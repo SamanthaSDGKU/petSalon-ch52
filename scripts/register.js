@@ -5,19 +5,31 @@ let pets = [];//empty array
 let pet1 = {
     name:"Scooby",
     age:99,
-    gender:"Male"
+    gender:"Male",
+    breed:"Dane",
+    service:"Grooming"
+}
+let pet2 = {
+    name:"Scrappy",
+    age:88,
+    gender:"Male",
+    breed:"Mixed",
+    service:"Grooming"
+}
+let pet3 = {
+    name:"Tweety",
+    age:59,
+    gender:"Female",
+    breed:"Canarian",
+    service:"Vaccines"
 }
 
-
-
-pets.push(pet1);
+pets.push(pet1,pet2,pet3);//adding into the array
 
 function displayNames(){
     //display pet names
-    console.log(pets[0].name);
-    //console.log(pets[1].name);
-    
-//hint: use a for loop and travel the array
-//hint: use brute force
-//Hint: length the amount of elements on the array
+    for(let i=0;i<pets.length;i++){
+        document.getElementById("petNames").innerHTML+=`<p> Name: ${pets[i].name}</p>`;
+    }
+    console.log(pets.length);
 }
