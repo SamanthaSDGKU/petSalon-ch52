@@ -21,3 +21,24 @@ img{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+#pets{
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+}
+.pet{
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.grooming{
+    background-color: rgb(168, 205, 243);
+}
+.vaccines{
+    background-color: rgb(197, 244, 175);
+}
+.nails{
+    background-color: rgb(245, 217, 245);
+}
