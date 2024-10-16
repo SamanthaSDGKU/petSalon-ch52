@@ -20,7 +20,8 @@ function register(){
     console.log(newPet);
     pets.push(newPet);
     displayTotals();
-    displayCards(); //displayTable()
+    //displayCards(); //
+    displayTable()
 }
 
 function init(){
@@ -35,7 +36,8 @@ function init(){
     // display the three pets on the console
     console.log(pets);
     displayTotals();
-    displayCards();
+    //displayCards();
+    displayTable();
 }
 
 window.onload=init;//wait to render the HTML

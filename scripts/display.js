@@ -21,12 +21,19 @@ function displayTotals(){
 }
 
 function displayTable(){
-    // .. 
-    //..
-    //..
+    let row="";
+    for(let i=0;i<pets.length;i++){
+        let pet = pets[i];//getting the current
 
     // instead of card use row
-    //row +=`<tr></tr>`
+        row +=`<tr>
+            <td>${pet.name}</p>
+            <td>${pet.age}</p>
+            <td>${pet.gender}</p>
+            <td>${pet.service}</p>
+            <td> <button class="btn btn-danger">Delete </button> </td>
+        </tr>`
     // read about HTML tables
-    
+    }
+    document.getElementById("petTable").innerHTML=row;
 }
