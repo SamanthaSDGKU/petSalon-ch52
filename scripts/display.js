@@ -26,14 +26,16 @@ function displayTable(){
         let pet = pets[i];//getting the current
 
     // instead of card use row
-        row +=`<tr>
+        row +=`<tr id="${i}">
             <td>${pet.name}</p>
             <td>${pet.age}</p>
             <td>${pet.gender}</p>
             <td>${pet.service}</p>
-            <td> <button class="btn btn-danger">Delete </button> </td>
+            <td><button class="btn btn-danger" onclick="deletePet(${i})">Delete </button></td>
         </tr>`
     // read about HTML tables
     }
     document.getElementById("petTable").innerHTML=row;
 }
+
+//create the deletePet function under the register.js and display on the console "Deleting pet ... " 

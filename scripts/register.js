@@ -1,5 +1,8 @@
 let pets = [];//empty array
-
+let inputName= document.getElementById("txtName");
+let inputAge = document.getElementById("txtAge");
+let inputGender =document.getElementById("txtGender");
+let inputService = document.getElementById("txtService");
 
 function Pet(name,age,gender,service){
     //properties = parameter (value)
@@ -9,19 +12,38 @@ function Pet(name,age,gender,service){
     this.service=service;
 }
 
-function register(){
-    let inputName= document.getElementById("txtName").value;
-    let inputAge = document.getElementById("txtAge").value;
-    let inputGender =document.getElementById("txtGender").value;
-    let inputService = document.getElementById("txtService").value;
+function isValid(pet){
+    let validation =true;
+    if(pet.name==""){
+        validation = false;
+        inputName.classList.add("error");
+       
+    }
+    if(pet.servic==""){
+        validation=false;
+        inputService.classList.add("error");
+    }
+    return validation;
+}
 
+function register(){
     //create the obj
-    let newPet = new Pet(inputName,inputAge,inputGender,inputService);
+    let newPet = new Pet(inputName.value,inputAge.value,inputGender.value,inputService.value);
     console.log(newPet);
-    pets.push(newPet);
+    if(isValid(newPet)==true){
+        pets.push(newPet);
+        displayTotals();
+        //displayCards(); //
+        displayTable()
+    }
+}
+
+function deletePet(petId){
+    console.log("Deleting pet ... " + petId);
+    document.getElementById(petId).remove();
+    pets.splice(petId,1);
+    displayTable();
     displayTotals();
-    //displayCards(); //
-    displayTable()
 }
 
 function init(){
