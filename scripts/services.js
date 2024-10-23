@@ -35,7 +35,7 @@ function register(){
     
     if(isValid(newService)){
         console.log(newService);
-        //save(service)
+        save(newService);
     }
 }
 function init(){
