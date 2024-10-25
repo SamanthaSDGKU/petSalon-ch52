@@ -46,6 +46,15 @@ function deletePet(petId){
     displayTotals();
 }
 
+function getServices(){
+    let services = read(); //this fn is under the storeManager
+    let option="";
+    for(let i=0;i<services.length;i++){
+        let service = services[i];
+        option+=`<option value="${service.title}">${service.title}</option>`
+    }
+    $("#txtService").append(option);
+}
 function init(){
     console.log("init");
     let pet1 = new Pet("Scooby",99,"Male","grooming");
@@ -60,6 +69,29 @@ function init(){
     displayTotals();
     //displayCards();
     displayTable();
+
+    getServices();
+    
+    $("#total-text").hide();
+
+    $("#register-text").on('click',function(){
+        $("#total-text").toggle();
+    });
+
+    $("#mode").on('click',function(){
+        if($("body").css("background-color") === 'rgb(0, 0, 0)'){
+            $("body").css("background-color","white");
+            $(this).text("dark mode");
+        }else{
+            $("body").css("color","gray").css("background-color","black");
+            $(this).text("light mode");
+            console.log(" light bg");
+        }
+    });
+
+    // $("#register-text").on('mouseleave',function(){
+    //     $("#total-text").slideUp(5000);
+    // })
 }
 
 window.onload=init;//wait to render the HTML

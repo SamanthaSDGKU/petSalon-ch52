@@ -16,6 +16,8 @@
                 <a href="index.html">Home</a>
                 <a href="register.html">Register</a>
             </nav>
+
+            <button id="mode">Dark Mode</button>
         </div>
     </header>
     <main>
@@ -37,9 +39,6 @@
                 <label>Service: </label>
                 <select class="form-select"  id="txtService">
                     <option value="" disabled selected>-- Select an option --</option>
-                    <option value="grooming">Gromming</option>
-                    <option value="nails">Nails</option>
-                    <option value="vaccines">Vaccines</option>
                 </select>
             </div>
             <div class="mb-3">
@@ -48,9 +47,9 @@
         </div>
 
         <div class="container-sm">
-            <h2>Registered pets</h2>
+            <h2 id="register-text">Registered pets</h2>
             <div>
-                <p>Total= <span id="total">hello</span></p>
+                <p id="total-text">Total= <span id="total">hello</span></p>
             </div>
             <div id="pets">
                 <!-- all the pets are going to be displayed here!!! -->
@@ -72,6 +71,8 @@
 
 
     </main>
+    <script src="./plugins/jQuery3.7.1.js"></script>
+    <script src="./scripts/storeManager.js"></script>
     <script src="./scripts/register.js"></script>
     <script src="./scripts/display.js"></script>
 </body>
